@@ -18,7 +18,7 @@ public class TestBase {
     @BeforeAll
     static void setup() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        Configuration.startMaximized = true;
+        Configuration.browserSize = System.getProperty("web.browser.size");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
